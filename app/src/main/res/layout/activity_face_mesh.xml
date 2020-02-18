@@ -1,0 +1,97 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AugmentedFacesActivity">
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <fragment android:name="com.google.ar.sceneform.samples.augmentedfaces.AugmentedFacesActivity$FaceArFragment"
+        android:id="@+id/face_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/clean"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/broom"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="100dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="@+id/face_fragment"
+        app:layout_constraintHeight_percent=".5"
+        app:layout_constraintTop_toTopOf="@+id/face_fragment">
+
+      <ImageView
+          android:id="@+id/ojos"
+          android:layout_width="match_parent"
+          android:layout_height="110dp"
+          android:src="@drawable/eyes"
+          app:layout_constraintBottom_toTopOf="@+id/rostro"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/labios" />
+
+      <ImageView
+          android:id="@+id/labios"
+          android:background="@drawable/circle"
+          android:layout_marginTop="10dp"
+          android:layout_width="90dp"
+          android:layout_height="90dp"
+          android:src="@drawable/mouth"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+          android:id="@+id/rostro"
+          android:layout_marginBottom="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="110dp"
+          android:src="@drawable/face"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="match_parent"
+      android:layout_height="90dp"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aquí van los productos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/toque"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+      <ImageView
+        android:id="@+id/toque"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/cultures"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+  </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
